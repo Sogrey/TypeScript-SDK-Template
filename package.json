@@ -1,5 +1,5 @@
 {
-  "name": "typescript-sdk-template",
+  "name": "@sogrey/typescript-sdk-template",
   "version": "0.0.1",
   "description": "使用TypeScript开发SDK模板",
   "main": "./bundles/tsdk.js",
@@ -14,6 +14,7 @@
     "compile": "npx tsc --p tsconfig.json",
     "bundle": "npx microbundle --i dist/index.js --name TSDK --target=browser",
     "docs": "typedoc --out docs/ src/index.ts",
+    "npm:publish": "npm publish --access public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
