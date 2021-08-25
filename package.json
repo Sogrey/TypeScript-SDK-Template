@@ -1,0 +1,41 @@
+{
+  "name": "typescript-sdk-template",
+  "version": "0.0.1",
+  "description": "使用TypeScript开发SDK模板",
+  "main": "./bundles/tsdk.js",
+  "module": "./bundles/tsdk.m.js",
+  "unpkg": "./bundles/tsdk.umd.js",
+  "jsdelivr": "./bundles/tsdk.umd.js",
+  "typings": "./typings/index.d.ts",
+  "scripts": {
+    "release": "npm run build && npm run docs",
+    "build": "npm run clean && npm run compile && npm run bundle",
+    "clean":"rm -rf bundles dist typings",
+    "compile": "npx tsc --p tsconfig.json",
+    "bundle": "npx microbundle --i dist/index.js --name TSDK --target=browser",
+    "docs": "typedoc --out docs/ src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "bundles",
+    "typings"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sogrey/TypeScript-SDK-Template.git"
+  },
+  "keywords": [
+    "TypeScript"
+  ],
+  "author": "Sogrey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sogrey/TypeScript-SDK-Template/issues"
+  },
+  "homepage": "https://github.com/Sogrey/TypeScript-SDK-Template#readme",
+  "devDependencies": {
+    "microbundle": "^0.13.3",
+    "typedoc": "^0.21.6",
+    "typescript": "^4.3.5"
+  }
+}
