@@ -1,0 +1,22 @@
+{
+  "name": "typescript-sdk-template-test",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sogrey/TypeScript-SDK-Template.git"
+  },
+  "author": "Sogrey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sogrey/TypeScript-SDK-Template/issues"
+  },
+  "homepage": "https://github.com/Sogrey/TypeScript-SDK-Template#readme",
+  "dependencies": {
+    "@sogrey/typescript-sdk-template": "^0.0.1"
+  }
+}
