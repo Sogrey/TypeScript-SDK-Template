@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "http-server -p 8002",
     "test": "node index.js"
   },
   "repository": {
@@ -18,5 +19,8 @@
   "homepage": "https://github.com/Sogrey/TypeScript-SDK-Template#readme",
   "dependencies": {
     "@sogrey/typescript-sdk-template": "^0.0.1"
+  },
+  "devDependencies": {
+    "http-server": "^13.0.1"
   }
 }
