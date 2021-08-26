@@ -8,12 +8,14 @@
   "jsdelivr": "./bundles/tsdk.umd.js",
   "typings": "./typings/index.d.ts",
   "scripts": {
+    "start": "http-server -p 8000",
     "release": "npm run build && npm run docs",
     "build": "npm run clean && npm run compile && npm run bundle",
-    "clean":"rm -rf bundles dist typings",
+    "clean": "rm -rf bundles dist typings",
     "compile": "npx tsc --p tsconfig.json",
     "bundle": "npx microbundle --i dist/index.js --name TSDK --target=browser",
     "docs": "typedoc --out docs/ src/index.ts",
+    "openDocs": "cd docs && http-server -p 8001",
     "npm:publish": "npm publish --access public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -35,6 +37,7 @@
   },
   "homepage": "https://github.com/Sogrey/TypeScript-SDK-Template#readme",
   "devDependencies": {
+    "http-server": "^13.0.1",
     "microbundle": "^0.13.3",
     "typedoc": "^0.21.6",
     "typescript": "^4.3.5"
