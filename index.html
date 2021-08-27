@@ -15,6 +15,13 @@
         let greeter = new TSDK.Greeter("world");
         console.log(greeter.greet());
     </script>
+
+    <script type="module">
+        // import TSDK from './bundles/tsdk.modern.js'; // or
+        import TSDK from './bundles/tsdk.module.js';
+        let greeter = new TSDK.Greeter("world");
+        console.log(greeter.greet());
+    </script>
 </body>
 
 </html>

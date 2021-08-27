@@ -62,44 +62,83 @@
 					<h1>TypeScript-SDK-Template</h1>
 				</a>
 				<p>使用TypeScript开发SDK模板</p>
-				<pre><code class="language-bash"><span style="color: #000000">npm i @sogrey/typescript-sdk-template</span>
+				<ul>
+					<li><code>tsdk.js</code> 是 CommonJS 模块。这是一种被 NodeJS 使用的模块类型，看起来像 const myModule = require(&#39;my-module&#39;)</li>
+					<li><code>tsdk.module.js</code> 是 ECMAScript 模块，由 ES6 定义，看起来类似 import MyModule from &#39;my-module&#39;</li>
+					<li><code>tsdk.umd.js</code> 是 UMD 模块</li>
+					<li><code>tsdk.d.ts</code> 是 TypeScript 类型描述文件</li>
+				</ul>
+				<blockquote>
+					<p>In addition to the above formats, Microbundle also outputs a modern bundle specially designed to work in all modern browsers. This bundle preserves most modern JS features when compiling your code, but ensures the result runs in 95% of web browsers without needing to be transpiled. Specifically, it uses Babel&#39;s &quot;bugfixes&quot; mode (previously known as preset-modules) to target the set of browsers that support <script type="module"> - that allows syntax like async/await, tagged templates, arrow functions, destructured and rest parameters, etc. The result is generally smaller and faster to execute than the plain esm bundle.</p>
+<p>除了上述格式之外，Microbundle 还输出了一个<code>modern</code>专门设计用于所有现代浏览器的包。这个包在编译你的代码时保留了大多数现代 JS 特性，但确保结果在 95% 的 Web 浏览器中运行而无需转换。具体来说，它使用 Babel 的“bugfixes”模式 （以前称为preset-modules）来定位支持的浏览器集<code>&lt;script type=&quot;module&quot;&gt;</code>- 允许使用 <code>async/await</code>、标记模板、箭头函数、解构和休息参数等语法。结果是通常比普通esm包更小，执行速度更快。</p>
+</blockquote>
+
+<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+  <h2>Install</h2>
+</a>
+<pre><code class="language-bash"><span style="color: #000000">npm i @sogrey/typescript-sdk-template</span>
 </code></pre>
-				<pre><code class="language-html"><span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;./bundles/tsdk.umd.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+
+<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+  <h2>Usage</h2>
+</a>
+<p>umd:</p>
+<pre><code class="language-html"><span style="color: #008000">&lt;!-- &lt;script src=&quot;./bundles/tsdk.umd.js&quot;&gt;&lt;/script&gt; --&gt;</span>
+<span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;./node_modules/@sogrey/typescript-sdk-template/bundles/tsdk.umd.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
 <span style="color: #800000">&lt;script&gt;</span>
 <span style="color: #000000FF">    </span><span style="color: #0000FF">let</span><span style="color: #000000FF"> </span><span style="color: #001080">greeter</span><span style="color: #000000FF"> </span><span style="color: #000000">=</span><span style="color: #000000FF"> </span><span style="color: #0000FF">new</span><span style="color: #000000FF"> </span><span style="color: #0070C1">TSDK</span><span style="color: #000000FF">.</span><span style="color: #795E26">Greeter</span><span style="color: #000000FF">(</span><span style="color: #A31515">&quot;world&quot;</span><span style="color: #000000FF">);</span>
 <span style="color: #000000FF">    </span><span style="color: #001080">console</span><span style="color: #000000FF">.</span><span style="color: #795E26">log</span><span style="color: #000000FF">(</span><span style="color: #001080">greeter</span><span style="color: #000000FF">.</span><span style="color: #795E26">greet</span><span style="color: #000000FF">());</span>
 <span style="color: #800000">&lt;/script&gt;</span>
 </code></pre>
-			</div>
-		</div>
-		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
-			<nav class="tsd-navigation primary">
-				<ul>
-					<li class=" ">
-						<a href="modules.html">Exports</a>
-					</li>
-				</ul>
-			</nav>
-			<nav class="tsd-navigation secondary menu-sticky">
-				<ul class="before-current">
-					<li class=" tsd-kind-variable">
-						<a href="modules.html#default" class="tsd-kind-icon">default</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</div>
+<p>module:</p>
+<pre><code class="language-js"><span style="color: #800000">&lt;script</span><span style="color: #000000"> </span><span style="color: #FF0000">type</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;module&quot;</span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">    import TSDK from &#039;./bundles/tsdk.module.js&#039;;</span>
+<span style="color: #000000">    let greeter = new TSDK.Greeter(&quot;world&quot;);</span>
+<span style="color: #000000">    console.log(greeter.greet());</span>
+<span style="color: #800000">&lt;/script&gt;</span>
+</code></pre>
+<p>nodejs:</p>
+<pre><code class="language-js"><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #0070C1">TSDK</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;@sogrey/typescript-sdk-template&#039;</span><span style="color: #000000">)</span>
+
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">greeter</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #0070C1">TSDK</span><span style="color: #000000">.</span><span style="color: #795E26">Greeter</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;world&quot;</span><span style="color: #000000">);</span>
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">greeter</span><span style="color: #000000">.</span><span style="color: #795E26">greet</span><span style="color: #000000">());</span>
+</code></pre>
+
 </div>
+        </div>
+        <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+            <nav class="tsd-navigation primary">
+                <ul>
+                                    <li class=" ">
+                <a href="modules.html">Exports</a>
+            </li>
+                </ul>
+            </nav>
+
+            <nav class="tsd-navigation secondary menu-sticky">
+                <ul class="before-current">
+                        <li class=" tsd-kind-variable">
+    <a href="modules.html#default" class="tsd-kind-icon">default</a>
+</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
 <footer class="with-border-bottom">
-	<div class="container">
-		<h2>Legend</h2>
-		<div class="tsd-legend-group">
-		</div>
-	</div>
+    <div class="container">
+        <h2>Legend</h2>
+        <div class="tsd-legend-group">
+        </div>
+    </div>
 </footer>
-<div class="container tsd-generator">
-	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
-</div>
+
+    <div class="container tsd-generator">
+        <p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+    </div>
+
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
 </body>

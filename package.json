@@ -1,9 +1,10 @@
 {
   "name": "@sogrey/typescript-sdk-template",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "使用TypeScript开发SDK模板",
   "main": "./bundles/tsdk.js",
-  "module": "./bundles/tsdk.m.js",
+  "exports": "./bundles/tsdk.modern.js",
+  "module": "./bundles/tsdk.module.js",
   "unpkg": "./bundles/tsdk.umd.js",
   "jsdelivr": "./bundles/tsdk.umd.js",
   "typings": "./typings/index.d.ts",
