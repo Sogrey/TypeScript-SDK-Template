@@ -1,6 +1,8 @@
 # TypeScript-SDK-Template
 使用TypeScript开发SDK模板
 
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/Sogrey/TypeScript-SDK-Template)
+
 
 - `tsdk.js` 是 CommonJS 模块。这是一种被 NodeJS 使用的模块类型，看起来像 const myModule = require('my-module')
 - `tsdk.module.js` 是 ECMAScript 模块，由 ES6 定义，看起来类似 import MyModule from 'my-module'
