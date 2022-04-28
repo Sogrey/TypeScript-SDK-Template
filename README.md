@@ -31,7 +31,7 @@ umd:
 </script>
 ```
 module:
-``` js
+``` html
 <script type="module">
     import TSDK from './bundles/tsdk.module.js';
     let greeter = new TSDK.Greeter("world");
