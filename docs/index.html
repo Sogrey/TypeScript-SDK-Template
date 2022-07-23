@@ -62,6 +62,7 @@
 					<h1>TypeScript-SDK-Template</h1>
 				</a>
 				<p>使用TypeScript开发SDK模板</p>
+				<p><a href="https://open.vscode.dev/Sogrey/TypeScript-SDK-Template"><img src="https://open.vscode.dev/badges/open-in-vscode.svg" alt="Open in Visual Studio Code"></a></p>
 				<ul>
 					<li><code>tsdk.js</code> 是 CommonJS 模块。这是一种被 NodeJS 使用的模块类型，看起来像 const myModule = require(&#39;my-module&#39;)</li>
 					<li><code>tsdk.module.js</code> 是 ECMAScript 模块，由 ES6 定义，看起来类似 import MyModule from &#39;my-module&#39;</li>
@@ -93,10 +94,10 @@
 <span style="color: #800000">&lt;/script&gt;</span>
 </code></pre>
 <p>module:</p>
-<pre><code class="language-js"><span style="color: #800000">&lt;script</span><span style="color: #000000"> </span><span style="color: #FF0000">type</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;module&quot;</span><span style="color: #800000">&gt;</span>
-<span style="color: #000000">    import TSDK from &#039;./bundles/tsdk.module.js&#039;;</span>
-<span style="color: #000000">    let greeter = new TSDK.Greeter(&quot;world&quot;);</span>
-<span style="color: #000000">    console.log(greeter.greet());</span>
+<pre><code class="language-html"><span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">type</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;module&quot;</span><span style="color: #800000">&gt;</span>
+<span style="color: #000000FF">    </span><span style="color: #AF00DB">import</span><span style="color: #000000FF"> </span><span style="color: #001080">TSDK</span><span style="color: #000000FF"> </span><span style="color: #AF00DB">from</span><span style="color: #000000FF"> </span><span style="color: #A31515">&#039;./bundles/tsdk.module.js&#039;</span><span style="color: #000000FF">;</span>
+<span style="color: #000000FF">    </span><span style="color: #0000FF">let</span><span style="color: #000000FF"> </span><span style="color: #001080">greeter</span><span style="color: #000000FF"> </span><span style="color: #000000">=</span><span style="color: #000000FF"> </span><span style="color: #0000FF">new</span><span style="color: #000000FF"> </span><span style="color: #0070C1">TSDK</span><span style="color: #000000FF">.</span><span style="color: #795E26">Greeter</span><span style="color: #000000FF">(</span><span style="color: #A31515">&quot;world&quot;</span><span style="color: #000000FF">);</span>
+<span style="color: #000000FF">    </span><span style="color: #001080">console</span><span style="color: #000000FF">.</span><span style="color: #795E26">log</span><span style="color: #000000FF">(</span><span style="color: #001080">greeter</span><span style="color: #000000FF">.</span><span style="color: #795E26">greet</span><span style="color: #000000FF">());</span>
 <span style="color: #800000">&lt;/script&gt;</span>
 </code></pre>
 <p>nodejs:</p>
